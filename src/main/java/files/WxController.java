@@ -21,6 +21,9 @@ public class WxController implements Initializable {
     private TextField txtZipcode;
 
     @FXML
+    private ImageView IconWx;
+
+    @FXML
     private Label lblCityState;
 
     @FXML
@@ -71,74 +74,7 @@ public class WxController implements Initializable {
     @FXML
     private Label nh3;
 
-    @FXML
-    private Label minSunday;
-
-    @FXML
-    private Label maxSunday;
-
-    @FXML
-    private Label maxMonday;
-
-    @FXML
-    private Label minMonday;
-
-    @FXML
-    private Label maxTuesday;
-
-    @FXML
-    private Label minTuesday;
-
-    @FXML
-    private Label maxWednesday;
-
-    @FXML
-    private Label minWednesday;
-
-    @FXML
-    private Label maxThursday;
-
-    @FXML
-    private Label minThursday;
-
-    @FXML
-    private Label maxFriday;
-
-    @FXML
-    private Label minFriday;
-
-    @FXML
-    private Label maxSaturday;
-
-    @FXML
-    private Label minSaturday;
-
-    @FXML
-    private ImageView IconWx;
-
-    @FXML
-    private ImageView IconSunday;
-
-    @FXML
-    private ImageView IconMonday;
-
-    @FXML
-    private ImageView IconTuesday;
-
-    @FXML
-    private ImageView IconWednesday;
-
-    @FXML
-    private ImageView IconThursday;
-
-    @FXML
-    private ImageView IconFriday;
-
-    @FXML
-    private ImageView IconSaturday;
-
-
-
+    
     @FXML
     private void handleButtonAction(ActionEvent e) {
         // Create object to access the Model
@@ -199,67 +135,7 @@ public class WxController implements Initializable {
             nh3.setText("");
         }
 
-        if (weather.getForecast(lat, longitude)) {
-//      lbl.setText(weather.getCo());
-//            weather.getDescription();
-         //   weather.getIcon();
-
-            minSunday.setText(weather.getMinSunday());
-            maxSunday.setText(weather.getMaxSunday());
-
-            minMonday.setText(weather.getMinMonday());
-            maxMonday.setText(weather.getMaxMonday());
-
-            minTuesday.setText(weather.getMinTuesday());
-            maxTuesday.setText(weather.getMinTuesday());
-
-            minWednesday.setText(weather.getMinWednesday());
-            maxWednesday.setText(weather.getMaxWednesday());
-
-            minThursday.setText(weather.getMinThursday());
-            maxThursday.setText(weather.getMaxThursday());
-
-            minFriday.setText(weather.getMinFriday());
-            maxFriday.setText(weather.getMaxFriday());
-
-            minSaturday.setText(weather.getMinSaturday());
-            maxSaturday.setText(weather.getMaxSaturday());
-
-            IconSunday.setImage(weather.getIconSunday());
-            IconMonday.setImage(weather.getIconMonday());
-            IconTuesday.setImage(weather.getIconTuesday());
-            IconWednesday.setImage(weather.getIconWednesday());
-            IconThursday.setImage(weather.getIconThursday());
-            IconFriday.setImage(weather.getIconFriday());
-            IconSaturday.setImage(weather.getIconSaturday());
-
-
-        } else {
-           minSunday.setText("");
-           maxSunday.setText("");
-
-           minMonday.setText("");
-           maxMonday.setText("");
-
-           minTuesday.setText("");
-           maxTuesday.setText("");
-
-           minWednesday.setText("");
-           maxWednesday.setText("");
-
-           minThursday.setText("");
-           maxThursday.setText("");
-
-           minFriday.setText("");
-           maxFriday.setText("");
-
-           minSaturday.setText("");
-           maxSaturday.setText("");
-
-
-        }
-
-    }
+            }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

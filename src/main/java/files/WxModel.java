@@ -17,7 +17,7 @@ public class WxModel {
   String Latitude;
   String Longitude;
 
-  private final String apiKey = "a7199e21caf1144c0ff3ebdaec774bf3";
+private final String apiKey = System.getenv("OPENWEATHER_API_KEY");
 
   public boolean getWx(String cityname)
   {
@@ -99,7 +99,7 @@ public class WxModel {
     System.out.println(jse.getAsJsonObject().get("name").getAsString());
     return jse.getAsJsonObject().get("name").getAsString();
   }
-
+  java-weather-dashboard
   public String getTime()
   {
     String dt = jse.getAsJsonObject().get("dt").getAsString();
@@ -158,19 +158,30 @@ public class WxModel {
   }
 
   public String getLatitude()
-  {
-    System.out.println(jse.getAsJsonObject().get("coord").getAsJsonObject().get("lon").getAsString());
-    Latitude = jse.getAsJsonObject().get("coord").getAsJsonObject().get("lon").getAsString();
-    return jse.getAsJsonObject().get("coord").getAsJsonObject().get("lon").getAsString();
-  }
+{
+    System.out.println(jse.getAsJsonObject()
+            .get("coord").getAsJsonObject()
+            .get("lat").getAsString());
 
-  public String getLongitude()
-  {
-    System.out.println(jse.getAsJsonObject().get("coord").getAsJsonObject().get("lat").getAsString());
-    Longitude = jse.getAsJsonObject().get("coord").getAsJsonObject().get("lat").getAsString();
-  //  getAirPollution();
-    return jse.getAsJsonObject().get("coord").getAsJsonObject().get("lat").getAsString();
-  }
+    Latitude = jse.getAsJsonObject()
+            .get("coord").getAsJsonObject()
+            .get("lat").getAsString();
+
+    return Latitude;
+}
+
+public String getLongitude()
+{
+    System.out.println(jse.getAsJsonObject()
+            .get("coord").getAsJsonObject()
+            .get("lon").getAsString());
+
+    Longitude = jse.getAsJsonObject()
+            .get("coord").getAsJsonObject()
+            .get("lon").getAsString();
+
+    return Longitude;
+}
 
   public Image getImage() {
     JsonArray icon = jse.getAsJsonObject().get("weather").getAsJsonArray();
@@ -519,14 +530,3 @@ public boolean getAirPollution(String lat,String longitude) {
 
 }
 
-//zip code
-//http://api.openweathermap.org/data/2.5/weather?zip=95747,us&appid=a7199e21caf1144c0ff3ebdaec774bf3
-
-//city name
-//http://api.openweathermap.org/data/2.5/weather?q=london&appid=a7199e21caf1144c0ff3ebdaec774bf3
-
-//air pollution
-//https://api.openweathermap.org/data/2.5/onecall?lat=1&lon=1&exclude=hourly&appid=a7199e21caf1144c0ff3ebdaec774bf3
-
-//7 day forecast
-//https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid=a7199e21caf1144c0ff3ebdaec774bf3

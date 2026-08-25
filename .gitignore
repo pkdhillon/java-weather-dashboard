@@ -1,0 +1,15 @@
+# Maven
+target/
+
+# Environment variables
+.env
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# IntelliJ
+.idea/
+*.iml
